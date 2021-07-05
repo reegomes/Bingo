@@ -45,6 +45,7 @@ function createCardFace(face, card, element) {
 }
 
 function flipCard() {
+    console.log("fui chamado");
     if (!this.classList.contains("flip")) {
         this.classList.add("flip")
     } else {

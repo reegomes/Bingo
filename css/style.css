@@ -79,8 +79,36 @@ body {
 }
 
 #gameBoard {
+    margin-left: 100px;
     max-width: 700px;
     display: grid;
     grid-template: 1fr 1fr 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     gap: 20px;
+}
+
+#rollBoard {
+    margin: 30px;
+    font-size: 150px;
+    background-color: beige;
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    padding-top: 10px;
+    align-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.btn {
+    position: absolute;
+    font-size: 50px;
+    background-color: white;
+    text-align: center;
+    width: 250px;
+    color: black;
+    border: 2px black;
+    border-style: solid;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    align-content: left;
 }

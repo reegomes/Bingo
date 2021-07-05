@@ -1,4 +1,5 @@
 const cartelaQt = 75;
+
 let game = {
 
     techs: [],
