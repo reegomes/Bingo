@@ -1,6 +1,7 @@
 let roll = 0;
-
+let rolled = [];
 let rollList = [];
+
 for (let i = 0; i < 75; i++) {
     rollList[i] = i + 1;
 }
@@ -20,23 +21,22 @@ let roll2 = document.getElementsByClassName("card");
 
 function startRoll() {
     roll = rolling(0, rollList.length);
-
-    if (roll != 0) {
+    if (roll != 0 && (rolled.includes(roll) == false)) {
         let rollBoard = document.getElementById("rollBoard");
         let rollElement = document.createElement('div');
         rollElement.id = rollList[roll];
-        console.log(rollList[roll].toString());
         rollBoard.innerHTML = rollList[roll];
         removeRoll(searching);
         flipCard1(searching);
     } else {
-        console.log("Foi 0");
         startRoll();
     }
 }
 
 function rolling(min, max) {
-    return parseInt(Math.random() * (max - min) + min);
+    let rand = parseInt(Math.random() * (max - min) + min);
+    console.log("rand é " + rand + " + 1");
+    return rand;
 }
 
 function flipCard1() {
