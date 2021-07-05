@@ -14,14 +14,15 @@ function removeRoll(a) {
         if (index > -1) {
             rollList.splice(index, 1);
         }
-    }, 500);
+    }, 100);
 }
 
 let roll2 = document.getElementsByClassName("card");
 
 function startRoll() {
     roll = rolling(0, rollList.length);
-    if (roll != 0 && (rolled.includes(roll) == false)) {
+    if (rolled.includes(roll) == false) {
+        rolled.push(roll);
         let rollBoard = document.getElementById("rollBoard");
         let rollElement = document.createElement('div');
         rollElement.id = rollList[roll];
@@ -29,14 +30,13 @@ function startRoll() {
         removeRoll(searching);
         flipCard1(searching);
     } else {
-        startRoll();
+        console.log("Acabou");
     }
 }
 
 function rolling(min, max) {
-    let rand = parseInt(Math.random() * (max - min) + min);
-    console.log("rand é " + rand + " + 1");
-    return rand;
+    //let rand = parseInt(Math.random() * (max - min) + min);
+    return parseInt(Math.random() * (max - min) + min);
 }
 
 function flipCard1() {
