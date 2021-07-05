@@ -30,7 +30,8 @@ function startRoll() {
         removeRoll(searching);
         flipCard1(searching);
     } else {
-        console.log("Acabou");
+        console.log("Já existe, rolando novamente");
+        startRoll();
     }
 }
 
