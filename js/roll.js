@@ -4,6 +4,7 @@ let rollList = [];
 for (let i = 0; i < 75; i++) {
     rollList[i] = i + 1;
 }
+let searching = rollList.find(e => e % roll == 0);
 
 function removeRoll(a) {
     value = a;
@@ -18,17 +19,16 @@ function removeRoll(a) {
 let roll2 = document.getElementsByClassName("card");
 
 function startRoll() {
-    console.log("cliquei");
     roll = rolling(0, rollList.length);
 
     if (roll != 0) {
         let rollBoard = document.getElementById("rollBoard");
         let rollElement = document.createElement('div');
         rollElement.id = rollList[roll];
+        console.log(rollList[roll].toString());
         rollBoard.innerHTML = rollList[roll];
-        removeRoll(roll);
-        flipCard1(roll);
-
+        removeRoll(searching);
+        flipCard1(searching);
     } else {
         console.log("Foi 0");
         startRoll();
@@ -36,8 +36,6 @@ function startRoll() {
 }
 
 function rolling(min, max) {
-    //let rand = parseInt(Math.random() * (max - min) + min);
-    //console.log(rand);
     return parseInt(Math.random() * (max - min) + min);
 }
 
